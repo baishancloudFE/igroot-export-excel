@@ -1,0 +1,52 @@
+.igroot-export-excel {
+  margin-bottom: 10px;
+}
+
+.igroot-export-excel .ant-upload-list {
+  display: none;
+}
+
+.igroot-export-excel-modal {
+  position: relative;
+}
+
+.igroot-export-excel-modal .set-column {
+  position: absolute;
+  width: 100%;
+  padding: 20px;
+  top: 115px;
+  left: 0px;
+}
+
+.igroot-export-excel-modal .set-icon {
+  position: absolute;
+  right: 30px; 
+  top: 2px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.igroot-export-excel-modal .set-content {
+  margin: 20px 0;
+}
+
+.igroot-export-excel-modal .set-label {
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+  margin-bottom: 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.igroot-export-excel-modal .set-input {
+  display: inline-block;
+  width: 40%;
+  margin-left: 10px;
+}
+
+.igroot-export-excel-modal .set-input.input-width {
+  display: inline-block;
+  width: 20%;
+  margin-left: 10px;
+}
