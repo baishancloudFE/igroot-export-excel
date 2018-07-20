@@ -1,6 +1,6 @@
 {
   "name": "igroot-export-excel",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "导出 excel 格式化",
   "main": "index.js",
   "keywords": [

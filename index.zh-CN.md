@@ -1,32 +1,34 @@
 ---
 category: BComponents
 type: General
-title: ImportExcel
-subtitle: 导入 Excel 数据组件
+title: ExportExcel
+subtitle: 导出 Excel 数据组件
 cols: 1
 ---
 
-导入 Excel 数据组件
+导出 Excel 数据组件
 
 ## 何时使用
 
-需要导入 excel 数据到表格中，导入的数据是个二维数组，同时希望定义导入的二维数据的 key。
+需要导出 excel 数据到表格中，导出的数据是个二维数组，同时希望定义导出的二维数据的表头。
 
 ## 安装方法(请修改您的业务组件的安装方法)
 
 ```jsx
-  sl add -c igroot-import-excel
+  sl add -c igroot-export-excel
 ```
 
 ## API
 
 ```jsx
-<IgrootImportExcel 
-  columnRules={columnRules}
-  onImportSuccess={this.handleImportSuccess}
+<IgrootExportExcel 
+  fileName="文件名"
+  sheetName="表名"
+  columns={columns}
+  dataSource={dataSource}
 >
-  <Button> 上传 Excel 文件</Button>
-</IgrootImportExcel>
+  <Button> 导出数据 </Button>
+</IgrootExportExcel>
 ```
 
 ### 属性
@@ -34,23 +36,33 @@ cols: 1
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | style | 样式 | Object | - |
-| className | 扩展样式类名 | String | - |
-| type | 类型 | String | 两种类型：'click' 和 'drag', 默认值 'click' |
+| className | 扩展样式类名 | string | - |
 | autoPreview | 是否预览 | boolean | false |
-| columnRules | 配置要显示的字段 | Object | - |
+| columns | 导出的表头设置 | array | - |
+| dataSource | 导出的数据 | array | - |
 | onImportSuccess | 导入成功的回调函数 | function | - |
 
+style: PropTypes.object,
+    className: PropTypes.string,
+    autoPreview: PropTypes.bool,
+    fileName: PropTypes.string,
+    sheetName: PropTypes.string,
+    columns: PropTypes.array,
+    dataSource: PropTypes.array
 
-#### columnRules
+#### columns
 ```jsx
-columnRules = {
-  "ISP": {
-    key: 'isp',
-    width: 50
-  },
-  "城市": {
-    key: 'city',
-    width: 100
-  }
-}
+const columns = [{
+  title: '姓名',
+  dataIndex: 'name',
+  key: 'name',
+}, {
+  title: '年龄',
+  dataIndex: 'age',
+  key: 'age',
+}, {
+  title: '住址',
+  dataIndex: 'address',
+  key: 'address',
+}]
 ```

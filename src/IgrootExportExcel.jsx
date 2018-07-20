@@ -83,7 +83,9 @@ export default class IgrootExportExcel extends Component {
     const wb = XLSX.utils.book_new()
     const ws = XLSX.utils.aoa_to_sheet(data)
     XLSX.utils.book_append_sheet(wb, ws, sheetName)
-    XLSX.writeFile(wb, `${fileName}.xlsx`)
+    XLSX.writeFile(wb, `${fileName}.xlsx`, {
+      cellStyles: true
+    })
   }
 
   render() {
